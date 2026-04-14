@@ -25,7 +25,9 @@
 ├── Week8-Student.ipynb               # 已執行完成的作業 notebook
 ├── Week8-Student-completed.ipynb     # 教師參考解答
 ├── data/
-│   └── guangfu_overlay.gpkg          # 光復 5 節點圖層（Pre-lab Step 7b 自建）
+│   ├── guangfu_overlay.gpkg          # 光復 5 節點（Pre-lab Step 7b 自建）
+│   ├── shelters_hualien.gpkg         # W3 避難所（198 個）
+│   └── top5_bottlenecks.gpkg         # W7 道路瓶頸（5 個）
 ├── mataian_detections.gpkg           # 3 圖層：barrier_lake / landslide_source / debris_flow
 ├── impact_table.csv                  # 目擊衝擊表
 └── output/
@@ -45,9 +47,14 @@
 | 堰塞湖（Mid） | **1.05 km²** | 8 | NCDR ~0.86 km² | ✅ 接近峰值 |
 | 崩塌源區（Pre→Post） | **2.10 km²** | 197 | NCDR ~2–5 km² | ✅ 吻合 |
 | 土石流鋪面（Pre→Post, 下游） | **10.94 km²** | 380 | 光復市街 4–5 km² | ⚠️ 略高（含季節性植被變化） |
-| Guangfu 圖層命中 | **2 / 5** | — | 3–5 預期 | ✅ 光復鄉公所、佛祖街沉積區被土石流覆蓋 |
-| W3 避難所命中 | 0 | — | 0 預期 | ✅ 覆蓋缺口成立 |
-| W7 瓶頸命中 | 0 | — | 0 預期 | ✅ 覆蓋缺口成立 |
+
+## 衝擊稽核結果
+
+| 圖層 | 命中 / 總數 | 說明 |
+|---|---|---|
+| W3 花蓮縣避難所 | **5 / 198** | 2.5% 命中——幾乎全縣避難所未在事件影響區 |
+| W7 Top-5 道路瓶頸 | **0 / 5** | 全部位於花蓮市，離事件 30 km |
+| W8 光復節點（自建） | **2 / 5** | 光復鄉公所、佛祖街沉積區被土石流覆蓋 |
 
 ---
 
@@ -77,18 +84,18 @@
 ---
 
 ### 圖 10 — 三幕綜合證據圖
-左上 Act 2 堰塞湖、右上 Act 3 崩塌源區、左下 Act 3 土石流、右下三幕疊加。
+左上 Act 2 堰塞湖（青）、右上 Act 3 崩塌源區（紅）、左下 Act 3 土石流（銅）、右下三幕疊加。
 
 ![三幕綜合](output/10_three_masks.png)
 
 ---
 
-### 圖 12 — 覆蓋缺口稽核地圖（全課堂核心圖）
-W3 花蓮市避難所 0 命中、W7 瓶頸 0 命中、W8 光復 5 節點 2 命中。
+### 圖 12 — 覆蓋缺口稽核地圖
+198 個 W3 避難所沿花蓮縣南北軸分布（綠點）、5 個 W7 瓶頸集中於花蓮市（黃點）、5 個 W8 光復節點（紅星）位於事件核心區。
 
 ![覆蓋缺口](output/12_coverage_gap_map.png)
 
-> **一句話結論**：「ARIA v1–v4 把所有資源放在花蓮市，但 2025 最嚴重的生命財產損失發生在南方 30 公里的光復鄉——完全在系統服務範圍之外。」
+> **一句話結論**：「花蓮縣 198 個避難所只有 5 個（2.5%）在事件影響區——ARIA v1–v4 的資源配置未能反映光復鄉的脆弱性。」
 
 ---
 
@@ -126,20 +133,6 @@ pip install pystac-client planetary-computer stackstac rioxarray xarray \
 ```
 
 macOS CJK 字型：`Heiti TC`、`PingFang HK`、`Noto Sans TC`。
-
----
-
-## 作業要求達成狀況
-
-- [x] Pre-lab Step 7b `guangfu_overlay.gpkg`（5 節點）
-- [x] Lab 1 S1–S6 全部 TODO
-- [x] Lab 2 S7–S12 全部 TODO
-- [x] 5 必交圖（07 / 08 / 09 / 10 / 12）
-- [x] 5 段必答討論（三幕 Discussion + C2/C3 物理差異 + 覆蓋缺口）
-- [x] `mataian_detections.gpkg` 3 圖層
-- [x] `impact_table.csv`
-- [x] S13 AI Advisor Prompt
-- [ ] S14 實際 LLM 呼叫（未設 `ANTHROPIC_API_KEY`，已安全跳過）
 
 ---
 
