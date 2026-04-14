@@ -1,0 +1,6 @@
+asset,type,location,W4_terrain_risk,W7_centrality_rank,lake_hit,landslide_hit,debris_hit,notes
+Foxu_Debris_Zone,critical_infra,Guangfu Township,MED,N/A,N,N,Y,佛祖街沉積區中心
+Guangfu_Township_Office,shelter,Guangfu Township,HIGH,N/A,N,N,Y,光復鄉公所
+Guangfu_Station,critical_infra,Guangfu Township,MED,N/A,N,N,N,光復火車站
+Guangfu_Elementary,shelter,Guangfu Township,HIGH,N/A,N,N,N,光復國小
+Mataian_Hwy9_Bridge,bridge,Guangfu Township,HIGH,N/A,N,N,N,台9線馬太鞍溪橋
